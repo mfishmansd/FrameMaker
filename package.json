@@ -1,0 +1,20 @@
+{
+  "name": "framemaker",
+  "version": "1.0.0",
+  "description": "CLI tool to add device frames to app screenshots",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "framemaker": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["screenshot", "frame", "iphone", "app-store"],
+  "license": "MIT",
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "sharp": "^0.33.2",
+    "glob": "^10.3.10"
+  }
+}

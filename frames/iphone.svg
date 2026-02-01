@@ -1,0 +1,130 @@
+<!--
+iPhone 15/16 Pro realistic frame - Screen: 710 × 1536, Canvas: 750 × 1576 (tight crop)
+-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="750" height="1576" viewBox="0 0 750 1576">
+  <defs>
+    <!-- Screen clip path -->
+    <clipPath id="clip-screen">
+      <rect x="20" y="18" width="710" height="1536" rx="48" ry="48"/>
+    </clipPath>
+
+    <!-- Dark titanium body -->
+    <linearGradient id="g-body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#35383c"/>
+      <stop offset="0.08" stop-color="#1e2024"/>
+      <stop offset="0.2" stop-color="#111315"/>
+      <stop offset="0.5" stop-color="#0a0b0d"/>
+      <stop offset="0.8" stop-color="#111315"/>
+      <stop offset="0.92" stop-color="#1e2024"/>
+      <stop offset="1" stop-color="#35383c"/>
+    </linearGradient>
+
+    <!-- Subtle inner edge -->
+    <linearGradient id="g-inner" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2a2d30"/>
+      <stop offset="0.1" stop-color="#151618"/>
+      <stop offset="0.9" stop-color="#151618"/>
+      <stop offset="1" stop-color="#2a2d30"/>
+    </linearGradient>
+
+    <!-- Button gradients -->
+    <linearGradient id="g-btn-left" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#45484c"/>
+      <stop offset="0.4" stop-color="#2a2d30"/>
+      <stop offset="1" stop-color="#1e2024"/>
+    </linearGradient>
+
+    <linearGradient id="g-btn-right" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#45484c"/>
+      <stop offset="0.4" stop-color="#2a2d30"/>
+      <stop offset="1" stop-color="#1e2024"/>
+    </linearGradient>
+
+    <!-- Screen glass subtle reflection -->
+    <linearGradient id="g-glass" x1="0" y1="0" x2="0.3" y2="0.4">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.01"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Device frame -->
+  <g>
+    <!-- Main frame body -->
+    <rect x="8" y="6" width="734" height="1560" rx="56" ry="56" fill="url(#g-body)"/>
+    
+    <!-- Outer edge highlight -->
+    <rect x="8" y="6" width="734" height="1560" rx="56" ry="56" 
+          fill="none" stroke="#404448" stroke-width="1" opacity="0.5"/>
+    
+    <!-- Inner dark edge -->
+    <rect x="16" y="14" width="718" height="1544" rx="50" ry="50" fill="url(#g-inner)"/>
+  </g>
+
+  <!-- Left buttons -->
+  <g>
+    <!-- Silent switch -->
+    <rect x="0" y="206" width="10" height="40" rx="2" fill="url(#g-btn-left)"/>
+    
+    <!-- Volume up -->
+    <rect x="0" y="301" width="10" height="70" rx="2" fill="url(#g-btn-left)"/>
+    
+    <!-- Volume down -->
+    <rect x="0" y="391" width="10" height="70" rx="2" fill="url(#g-btn-left)"/>
+  </g>
+
+  <!-- Right button (power/action) -->
+  <rect x="740" y="341" width="10" height="95" rx="2" fill="url(#g-btn-right)"/>
+
+  <!-- Screen bezel (black) -->
+  <rect x="18" y="16" width="714" height="1540" rx="50" ry="50" fill="#000000"/>
+
+  <!-- Screen content -->
+  <g clip-path="url(#clip-screen)">
+    <image
+      x="20" y="18"
+      width="710" height="1536"
+      href="{{SCREENSHOT_DATA}}"
+      preserveAspectRatio="xMidYMid slice"
+    />
+    
+    <!-- Subtle glass reflection -->
+    <rect x="20" y="18" width="710" height="1536" fill="url(#g-glass)"/>
+  </g>
+
+  <!-- Dynamic Island -->
+  <g>
+    <rect x="275" y="36" width="200" height="48" rx="24" ry="24" fill="#000000"/>
+    
+    <!-- Camera lens -->
+    <circle cx="418" cy="60" r="8" fill="#0c0c10"/>
+    <circle cx="418" cy="60" r="5" fill="#060608"/>
+    <circle cx="416" cy="58" r="1.2" fill="#ffffff" opacity="0.08"/>
+    
+    <!-- Face ID -->
+    <circle cx="342" cy="60" r="4.5" fill="#060608"/>
+    <circle cx="360" cy="60" r="2.5" fill="#060608"/>
+  </g>
+
+  <!-- Home indicator -->
+  <rect x="300" y="1504" width="150" height="5" rx="2.5" fill="#ffffff" opacity="0.08"/>
+
+  <!-- Bottom details (very subtle) -->
+  <g opacity="0.2">
+    <g fill="#3a3d42">
+      <circle cx="245" cy="1541" r="1.8"/>
+      <circle cx="256" cy="1541" r="1.8"/>
+      <circle cx="267" cy="1541" r="1.8"/>
+      <circle cx="278" cy="1541" r="1.8"/>
+      <circle cx="289" cy="1541" r="1.8"/>
+    </g>
+    <rect x="352" y="1537" width="46" height="8" rx="2" fill="#1a1c20"/>
+    <g fill="#3a3d42">
+      <circle cx="461" cy="1541" r="1.8"/>
+      <circle cx="472" cy="1541" r="1.8"/>
+      <circle cx="483" cy="1541" r="1.8"/>
+      <circle cx="494" cy="1541" r="1.8"/>
+      <circle cx="505" cy="1541" r="1.8"/>
+    </g>
+  </g>
+</svg>
