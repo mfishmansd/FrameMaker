@@ -1,27 +1,28 @@
-# Framemaker
+# FrameMaker
 
-CLI tool to add device frames to app screenshots for App Store submissions.
+CLI tool to add realistic device frames to app screenshots for App Store submissions.
 
 ## Installation
 
 ```bash
+git clone https://github.com/mfishmansd/FrameMaker.git
+cd FrameMaker
 npm install
+npm link
 ```
 
 ## Usage
 
 ```bash
-# Single file
-node index.js screenshot.png
+# iPhone screenshots (default)
+framemaker screenshot.png
+framemaker "screenshots/*.png"
 
-# Multiple files with glob
-node index.js "screenshots/*.png"
+# iPad screenshots
+framemaker screenshot.png --frame=ipad
 
-# Specify output directory
-node index.js screenshot.png ./output
-
-# With frame type (default: iphone)
-node index.js screenshot.png --frame=iphone
+# Custom output directory
+framemaker screenshot.png ./output
 ```
 
 ## Output
@@ -30,15 +31,15 @@ node index.js screenshot.png --frame=iphone
 - Output files are saved as `<original-name>-framed.png`
 - Default output directory: `./framed`
 
-## Frame Specs
+## Supported Frames
 
-### iPhone
-- Screen size: 710×1536
-- Output size: 890×1996
-- Aspect ratio matches iPhone Pro/Pro Max
+| Frame | Output Size | Screen Size |
+|-------|-------------|-------------|
+| iPhone | 750×1576 | 710×1536 |
+| iPad | 1060×1400 | 1024×1366 |
 
-## Adding New Frames
+## Uninstall
 
-1. Add SVG template to `frames/` directory
-2. Use `{{SCREENSHOT_DATA}}` as placeholder for the screenshot
-3. Add configuration to `FRAMES` object in `index.js`
+```bash
+npm unlink -g framemaker
+```
