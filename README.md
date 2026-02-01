@@ -2,6 +2,12 @@
 
 CLI tool to add realistic device frames to app screenshots for App Store submissions.
 
+## Examples
+
+| iPhone | iPad |
+|--------|------|
+| ![iPhone Example](examples/iphone-sample-framed.png) | ![iPad Example](examples/ipad-sample-framed.png) |
+
 ## Installation
 
 ```bash
