@@ -1,3 +1,4 @@
 node_modules/
 framed/
 .DS_Store
+output/
