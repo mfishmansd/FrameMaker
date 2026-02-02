@@ -96,11 +96,22 @@ async function generateFramedScreenshot(inputPath, outputPath, frameType = 'ipho
  */
 async function processScreenshots(inputPattern, outputDir, frameType) {
   // Find matching files
-  const files = await glob(inputPattern, { nodir: true });
+  const files = await glob(inputPattern, { 
+    nodir: true,
+    absolute: true,
+    windowsPathsNoEscape: true
+  });
   
   if (files.length === 0) {
-    console.error(`No files found matching: ${inputPattern}`);
-    process.exit(1);
+    // Check if the input is already a single file (shell expanded the glob)
+    try {
+      await fs.access(inputPattern);
+      // It's a single file that exists
+      files.push(inputPattern);
+    } catch {
+      console.error(`No files found matching: ${inputPattern}`);
+      process.exit(1);
+    }
   }
 
   // Ensure output directory exists
